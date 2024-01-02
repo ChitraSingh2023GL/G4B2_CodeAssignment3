@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+		integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<link th:rel="stylesheet" th:href="@{/assets/summernote/summernote-bs4.css}" />
+	<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} " />
+	<title>Save Ticket</title>
+</head>
+
+<body>
+
+	<div class="container">
+
+		<h3>Ticket Tracker</h3>
+		<hr>
+
+		<p class="h4 mb-4">Save Ticket</p>
+
+		<form action="#" th:action="@{/tickets/save}" th:object="${ticket}" method="POST">
+
+			<!-- Add hidden form field to handle update -->
+			<input type="hidden" th:field="*{id}" />
+			<label for="title">Title:</label>
+			<input type="text" th:field="*{title}" class="form-control mb-4 col-4" placeholder="Title">
+			<label for="description">Description:</label>
+			<input type="text" th:field="*{description}" class="form-control mb-4 col-4" placeholder="Description">
+			<label for="content">Content:</label>
+			<textarea type="text" rows="4" cols="5" id="content" placeholder="Content" class="form-control"
+				th:field="*{content}" autocomplete="off"></textarea>
+
+			<hr>
+			<input type="hidden" th:field="*{created}" class="form-control mb-4 col-4" placeholder="Created On">
+
+			<button type="submit" class="btn btn-info col-2">Save</button>
+
+		</form>
+
+		<hr>
+		<a th:href="@{/tickets/list}">Back to tickets List</a>
+
+	</div>
+	<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+	<script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+	<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+	<script th:src="@{/assets/summernote/summernote-bs4.js}"></script>
+
+	<script>
+		$('#content').summernote({
+			height: 200,
+
+		});
+	</script>
+</body>
+
+</html>
