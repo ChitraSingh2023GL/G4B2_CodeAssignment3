@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+		integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+	<title>View Ticket</title>
+</head>
+
+<body>
+
+	<div class="container">
+
+		<h3>Ticket Tracker</h3>
+		<hr>
+
+		<p class="h4 mb-4">View Ticket</p>
+
+
+
+		<form>
+
+			<label for="id">ID:</label>
+			<input readonly="true" th:field="*{ticket.id}" class="form-control mb-4 col-4" />
+			<label for="title">Title:</label>
+			<input readonly="true" th:field="*{ticket.title}" class="form-control mb-4 col-4">
+			<label for="description">Description:</label>
+			<input readonly="true" th:field="*{ticket.description}" class="form-control mb-4 col-4">
+			<label for="content">Content:</label>
+			<input readonly="true" th:field="*{ticket.content}" class="form-control mb-4 col-4">
+			<label for="created">Created On:</label>
+			<input readonly="true" th:field="*{ticket.created}" class="form-control mb-4 col-4">
+
+
+
+		</form>
+
+
+
+		<hr>
+		<a th:href="@{/tickets/list}">Back to tickets List</a>
+
+	</div>
+</body>
+
+</html>

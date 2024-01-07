@@ -1,0 +1,6 @@
+com\tickettrackerapp\entity\Ticket.class
+com\tickettrackerapp\TicketTracker.class
+com\tickettrackerapp\controller\TicketController.class
+com\tickettrackerapp\repository\TicketRepository.class
+com\tickettrackerapp\service\TicketService.class
+com\tickettrackerapp\service\TicketServiceImp.class
